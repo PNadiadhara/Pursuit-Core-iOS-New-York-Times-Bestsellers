@@ -27,6 +27,13 @@
 		BF38081C21FB9FBB00615367 /* BestSellerCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF38081B21FB9FBB00615367 /* BestSellerCollectionViewCell.swift */; };
 		BF38081E21FB9FC600615367 /* FavoritesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF38081D21FB9FC600615367 /* FavoritesCollectionViewCell.swift */; };
 		BF38082221FBA0EF00615367 /* BestSellerzView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF38082121FBA0EF00615367 /* BestSellerzView.swift */; };
+		BF60BD75220214FF00C319CC /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60BD74220214FF00C319CC /* Category.swift */; };
+		BF60BD78220215DC00C319CC /* BestCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60BD77220215DC00C319CC /* BestCategory.swift */; };
+		BF60BD7A22036F9E00C319CC /* SecretKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60BD7922036F9E00C319CC /* SecretKeys.swift */; };
+		BF60BD7C2203734300C319CC /* NYTCategoryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60BD7B2203734300C319CC /* NYTCategoryAPI.swift */; };
+		BF60BD7F22037D0E00C319CC /* NYTBookDetailAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60BD7E22037D0E00C319CC /* NYTBookDetailAPI.swift */; };
+		BF60BD812203829200C319CC /* GoogleBookAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60BD802203829200C319CC /* GoogleBookAPI.swift */; };
+		BF60BD83220382FD00C319CC /* GoogleBook.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF60BD82220382FD00C319CC /* GoogleBook.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -52,6 +59,13 @@
 		BF38081B21FB9FBB00615367 /* BestSellerCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSellerCollectionViewCell.swift; sourceTree = "<group>"; };
 		BF38081D21FB9FC600615367 /* FavoritesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesCollectionViewCell.swift; sourceTree = "<group>"; };
 		BF38082121FBA0EF00615367 /* BestSellerzView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSellerzView.swift; sourceTree = "<group>"; };
+		BF60BD74220214FF00C319CC /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		BF60BD77220215DC00C319CC /* BestCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestCategory.swift; sourceTree = "<group>"; };
+		BF60BD7922036F9E00C319CC /* SecretKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecretKeys.swift; sourceTree = "<group>"; };
+		BF60BD7B2203734300C319CC /* NYTCategoryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTCategoryAPI.swift; sourceTree = "<group>"; };
+		BF60BD7E22037D0E00C319CC /* NYTBookDetailAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NYTBookDetailAPI.swift; sourceTree = "<group>"; };
+		BF60BD802203829200C319CC /* GoogleBookAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBookAPI.swift; sourceTree = "<group>"; };
+		BF60BD82220382FD00C319CC /* GoogleBook.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleBook.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +125,8 @@
 				5718C00121FA772600A8E4B8 /* AppError.swift */,
 				5718C00521FA78BA00A8E4B8 /* ImageHelper.swift */,
 				5718BFFF21FA771800A8E4B8 /* NetworkHelper.swift */,
+				BF60BD7922036F9E00C319CC /* SecretKeys.swift */,
+				BF60BD7D22037C8500C319CC /* API Clients */,
 			);
 			path = "Network Services";
 			sourceTree = "<group>";
@@ -149,6 +165,7 @@
 			children = (
 				BF38082021FBA02200615367 /* ControllerViews */,
 				BF38081F21FBA00700615367 /* CollectionViewCells */,
+				BF60BD762202150600C319CC /* Model */,
 			);
 			name = Views;
 			path = Controllers/Views;
@@ -172,6 +189,26 @@
 				BF38081921FB9F7700615367 /* SettingsView.swift */,
 			);
 			path = ControllerViews;
+			sourceTree = "<group>";
+		};
+		BF60BD762202150600C319CC /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BF60BD74220214FF00C319CC /* Category.swift */,
+				BF60BD77220215DC00C319CC /* BestCategory.swift */,
+				BF60BD82220382FD00C319CC /* GoogleBook.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		BF60BD7D22037C8500C319CC /* API Clients */ = {
+			isa = PBXGroup;
+			children = (
+				BF60BD7B2203734300C319CC /* NYTCategoryAPI.swift */,
+				BF60BD7E22037D0E00C319CC /* NYTBookDetailAPI.swift */,
+				BF60BD802203829200C319CC /* GoogleBookAPI.swift */,
+			);
+			path = "API Clients";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,23 +282,30 @@
 			buildActionMask = 2147483647;
 			files = (
 				BF38081621FB9F6000615367 /* BestSellerDetailView.swift in Sources */,
+				BF60BD78220215DC00C319CC /* BestCategory.swift in Sources */,
 				BF38080B21FB9EB400615367 /* BestSellerDetailViewController.swift in Sources */,
+				BF60BD75220214FF00C319CC /* Category.swift in Sources */,
 				BF38081E21FB9FC600615367 /* FavoritesCollectionViewCell.swift in Sources */,
+				BF60BD7A22036F9E00C319CC /* SecretKeys.swift in Sources */,
 				5718C00021FA771800A8E4B8 /* NetworkHelper.swift in Sources */,
 				BF38080921FB9E8D00615367 /* BestSellerViewController.swift in Sources */,
+				BF60BD812203829200C319CC /* GoogleBookAPI.swift in Sources */,
 				BF38081821FB9F6B00615367 /* FavoritesView.swift in Sources */,
 				BF38082221FBA0EF00615367 /* BestSellerzView.swift in Sources */,
 				BF38080621FB9DAD00615367 /* TabBarController.swift in Sources */,
 				5718BFFC21FA763200A8E4B8 /* String+DateExtensions.swift in Sources */,
 				5718C00221FA772600A8E4B8 /* AppError.swift in Sources */,
 				BF38081A21FB9F7700615367 /* SettingsView.swift in Sources */,
+				BF60BD7C2203734300C319CC /* NYTCategoryAPI.swift in Sources */,
 				BF38080D21FB9EC200615367 /* FavoritesViewController.swift in Sources */,
+				BF60BD83220382FD00C319CC /* GoogleBook.swift in Sources */,
 				5718C00421FA77AA00A8E4B8 /* DataPersistenceManager.swift in Sources */,
 				5718BFE921FA75A800A8E4B8 /* AppDelegate.swift in Sources */,
 				BF38081C21FB9FBB00615367 /* BestSellerCollectionViewCell.swift in Sources */,
 				5718BFFE21FA764E00A8E4B8 /* Date+Extensions.swift in Sources */,
 				5718C00621FA78BA00A8E4B8 /* ImageHelper.swift in Sources */,
 				BF38080F21FB9ECD00615367 /* SettingsViewController.swift in Sources */,
+				BF60BD7F22037D0E00C319CC /* NYTBookDetailAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

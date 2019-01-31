@@ -10,12 +10,28 @@ import UIKit
 
 class SettingsView: UIView {
 
-    /*
-    // Only override draw() if you perform custom drawing.
-    // An empty implementation adversely affects performance during animation.
-    override func draw(_ rect: CGRect) {
-        // Drawing code
-    }
-    */
+    lazy var selectDefaultCatagory : UIPickerView = {
+        let pickerView = UIPickerView()
+        pickerView.backgroundColor = .white
+        return pickerView
+    }()
 
+    override init(frame: CGRect) {
+        super.init(frame: UIScreen.main.bounds)
+        addSubview(selectDefaultCatagory)
+        setConstraints()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setConstraints(){
+        selectDefaultCatagory.translatesAutoresizingMaskIntoConstraints = false
+        
+        [selectDefaultCatagory.centerXAnchor.constraint(equalTo: centerXAnchor),
+         selectDefaultCatagory.centerYAnchor.constraint(equalTo: centerYAnchor)
+         
+         ].forEach{$0.isActive = true}
+    }
 }

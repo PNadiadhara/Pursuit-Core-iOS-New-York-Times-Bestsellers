@@ -8,23 +8,39 @@
 
 import UIKit
 
+//use scrolltoindex to set picker view to defualt
+
 class SettingsViewController: UIViewController {
+    private var arrayOfNYTCategories = [CategoryInfo](){
+        didSet {
+            DispatchQueue.main.async {
+                self.settingsView.selectDefaultCatagory.reloadAllComponents()
+            }
+        }
+    }
+    
+    let settingsView = SettingsView()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = "Settings"
-        // Do any additional setup after loading the view.
+        view.backgroundColor = .white
+        self.view.addSubview(settingsView)
+        getCategory()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func getCategory () {
+        NYTBestSellerCategoryAPIClient.NYTCategory { (error, data) in
+            if let error = error {
+                print(error)
+            } else if let data = data {
+                self.arrayOfNYTCategories = data
+            }
+        }
     }
-    */
+   
 
 }
+
+
+
