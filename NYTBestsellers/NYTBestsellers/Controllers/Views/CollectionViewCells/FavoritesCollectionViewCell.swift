@@ -11,7 +11,7 @@ import UIKit
 class FavoritesCollectionViewCell: UICollectionViewCell {
     
     lazy var favoriteBookCoverImage : UIImageView = {
-        let image = UIImageView(image: UIImage(named: "tardigrade"))
+        let image = UIImageView(image: UIImage(named: "book-cover-placeholder"))
         return image
     }()
     
@@ -36,8 +36,9 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        self.backgroundColor = .black
+        self.backgroundColor = .white
         addSubview(favoriteBookCoverImage)
+        setConstraints()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -77,6 +78,7 @@ class FavoritesCollectionViewCell: UICollectionViewCell {
     
     func setBookTextViewConstraints() {
         addSubview(bookTextView)
+        bookTextView.backgroundColor = #colorLiteral(red: 0.501960814, green: 0.501960814, blue: 0.501960814, alpha: 1)
         bookTextView.translatesAutoresizingMaskIntoConstraints = false
         
         [bookTextView.topAnchor.constraint(equalTo: bookLabel.bottomAnchor, constant: 11),

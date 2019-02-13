@@ -98,6 +98,7 @@
 		5718BFE721FA75A800A8E4B8 /* NYTBestsellers */ = {
 			isa = PBXGroup;
 			children = (
+				BF60BD762202150600C319CC /* Model */,
 				BF38081221FB9F1600615367 /* Views */,
 				BF38080721FB9E1200615367 /* Controllers */,
 				5718C00721FA78E800A8E4B8 /* Network Services */,
@@ -165,7 +166,6 @@
 			children = (
 				BF38082021FBA02200615367 /* ControllerViews */,
 				BF38081F21FBA00700615367 /* CollectionViewCells */,
-				BF60BD762202150600C319CC /* Model */,
 			);
 			name = Views;
 			path = Controllers/Views;
